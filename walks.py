@@ -88,9 +88,17 @@ def position_to_wavelength(pos, num_digits):
 
 def main():
     e_str = ''
+    name = "golden-ratio"
+    # name = "e"
+    # name = "sqrt(2)"
+    # name = "sqrt(5)"
+    # name = "sqrt(6)"
+    # name = "sqrt(7)"
     with open('numbers.json', 'r') as file:
         data = json.load(file)
-        e_str = data["e"]["more_digits"].replace(".", "")
+        # e_str = data["e"]["more_digits"].replace(".", "")
+        e_str = data[name].replace(".", "")
+        
         print(len(e_str))
 
 
@@ -121,7 +129,7 @@ def main():
 
     print("digits walked")
 
-    image.save(createFileName("pics/my-file-"))
+    image.save(createFileName("pics/" + name + "-my-file-"))
 
     
 
